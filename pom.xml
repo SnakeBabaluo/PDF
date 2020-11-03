@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.babaluo</groupId>
+    <artifactId>PDF</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>IText</module>
+        <module>JasperReports</module>
+    </modules>
+    <!-- 集中定义依赖版本号 -->
+    <properties>
+        <itext.version>2.1.7</itext.version>
+        <jasperreports.version>6.8.0</jasperreports.version>
+        <junit.version>4.12</junit.version>
+        <itextasian.version>1.0.0</itextasian.version>
+    </properties>
+
+
+    <!-- 依赖管理标签  必须加 -->
+    <dependencyManagement>
+        <dependencies>
+            <!--导入Itext报表,根据自己自定义的pdf导出工具,方便快捷,效率低-->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>${itext.version}</version>
+            </dependency>
+            <!--导入jasperReports-->
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>${jasperreports.version}</version>
+            </dependency>
+            <!--单元测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--中文语言包-->
+            <dependency>
+                <groupId>com.alpha</groupId>
+                <artifactId>itextasian</artifactId>
+                <version>${itextasian.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+
+</project>
